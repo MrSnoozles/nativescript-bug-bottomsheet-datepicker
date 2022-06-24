@@ -5,23 +5,21 @@
     </ActionBar>
 
     <GridLayout>
-      <Label class="info">
-        <FormattedString>
-          <Span class="fas" text.decode="&#xf135; "/>
-          <Span :text="message"/>
-        </FormattedString>
-      </Label>
+      <Button @tap="openBottomSheet" text="Open BottomSheet"></Button>
     </GridLayout>
   </Page>
 </template>
 
 <script lang="ts">
   import Vue from "nativescript-vue";
+  import BottomSheetInner from './BottomSheetInner.vue';
 
   export default Vue.extend({
-    computed: {
-      message() {
-        return "Blank {N}-Vue app";
+    methods: {
+      openBottomSheet() {
+        this.$showBottomSheet(BottomSheetInner, {
+          
+        });
       }
     }
   });
